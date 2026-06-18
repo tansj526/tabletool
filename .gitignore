@@ -1,0 +1,10 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+.idea
+*.lock
+package-lock.json
+auto-imports.d.ts
+components.d.ts
