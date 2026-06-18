@@ -2,12 +2,13 @@ import { Languages } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const LANGUAGES = [
-  { label: "中文", value: "zh" },
-  { label: "EN", value: "en" },
-  { label: "日本語", value: "ja" },
-  { label: "DE", value: "de" },
-  { label: "FR", value: "fr" },
-  { label: "ES", value: "es" }
+  { label: "简体中文", value: "zh" },
+  { label: "English", value: "en" },
+  { label: "Français", value: "fr" },
+  { label: "Español", value: "es" },
+  { label: "português", value: "pt" },
+  { label: "Deutsch", value: "de" },
+  { label: "日本語", value: "ja" }
 ];
 
 export function LanguageSwitcher() {

@@ -32,10 +32,34 @@ const TEXT_EXPORT_FORMATS = new Set<TableFormat>([
   "biff"
 ]);
 
-function normalizeRows(rows: TableRows): TableRows {
+function cellToString(value: unknown): string {
+  if (value === null || value === undefined) {
+    return "";
+  }
+
+  if (typeof value === "string") {
+    return value;
+  }
+
+  if (
+    typeof value === "number" ||
+    typeof value === "boolean" ||
+    typeof value === "bigint"
+  ) {
+    return String(value);
+  }
+
+  try {
+    return JSON.stringify(value);
+  } catch {
+    return String(value);
+  }
+}
+
+function normalizeRows(rows: Array<Array<unknown>>): TableRows {
   const width = Math.max(0, ...rows.map((row) => row.length));
   return rows.map((row) =>
-    Array.from({ length: width }, (_, index) => String(row[index] ?? ""))
+    Array.from({ length: width }, (_, index) => cellToString(row[index]))
   );
 }
 
@@ -91,7 +115,7 @@ function parseJson(input: string): TableRows {
 
   if (parsed.every((row) => Array.isArray(row))) {
     return normalizeRows(
-      (parsed as unknown[][]).map((row) => row.map((cell) => String(cell ?? "")))
+      (parsed as unknown[][]).map((row) => row.map((cell) => cellToString(cell)))
     );
   }
 
@@ -100,7 +124,7 @@ function parseJson(input: string): TableRows {
     const headers = Array.from(new Set(objects.flatMap((row) => Object.keys(row))));
     return normalizeRows([
       headers,
-      ...objects.map((row) => headers.map((header) => String(row[header] ?? "")))
+      ...objects.map((row) => headers.map((header) => cellToString(row[header])))
     ]);
   }
 

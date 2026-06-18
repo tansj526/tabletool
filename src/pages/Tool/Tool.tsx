@@ -19,7 +19,7 @@ import { useTranslation } from "react-i18next";
 import { z } from "zod";
 import { Seo } from "../../components/common/Seo";
 import { Button } from "../../components/ui/Button";
-import { Select } from "../../components/ui/Select";
+import { SearchableSelect } from "../../components/ui/SearchableSelect";
 import { Textarea } from "../../components/ui/Textarea";
 import { useCopy } from "../../hooks/useCopy";
 import {
@@ -214,18 +214,12 @@ export function Tool() {
           className="rounded-md border border-slate-200 bg-white p-4 shadow-panel sm:p-5"
           onSubmit={form.handleSubmit(handleParse)}
         >
-          <div className="grid gap-4 lg:grid-cols-[220px_220px_1fr]">
-            <Select
+          <div className="grid gap-4 lg:grid-cols-[220px_1fr]">
+            <SearchableSelect
               label={t("inputFormat")}
               options={FORMAT_OPTIONS}
               value={store.sourceFormat}
-              onChange={(event) => store.setSourceFormat(event.target.value as TableFormat)}
-            />
-            <Select
-              label={t("outputFormat")}
-              options={FORMAT_OPTIONS}
-              value={store.targetFormat}
-              onChange={(event) => store.setTargetFormat(event.target.value as TableFormat)}
+              onChange={(value) => store.setSourceFormat(value as TableFormat)}
             />
             <Textarea
               label={t("inputLabel")}
@@ -347,6 +341,14 @@ export function Tool() {
             <div>
               <h3 className="text-lg font-bold text-slate-950">{t("result")}</h3>
               <p className="mt-1 text-sm text-slate-500">{t("exportHint")}</p>
+              <div className="mt-3 w-full max-w-xs">
+                <SearchableSelect
+                  label={t("outputFormat")}
+                  options={FORMAT_OPTIONS}
+                  value={store.targetFormat}
+                  onChange={(value) => store.setTargetFormat(value as TableFormat)}
+                />
+              </div>
             </div>
             <div className="flex gap-2">
               <Button
