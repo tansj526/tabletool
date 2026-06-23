@@ -3,6 +3,7 @@ export const zh = {
     navHome: "首页",
     navTool: "工具",
     navAbout: "关于",
+    navBlog: "博客",
     brand: "表格工具箱",
     heroTitle: "专业的表格数据转换工具",
     heroText: "支持 CSV、TSV、JSON、HTML 表格互转，本地处理，不上传服务器。",

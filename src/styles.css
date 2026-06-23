@@ -75,3 +75,87 @@ textarea {
 .page-privacy .titles {
   padding: 10px 0
 }
+
+.blog-content {
+  color: #334155;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3 {
+  color: #0f172a;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.blog-content h1 {
+  margin: 32px 0 16px;
+  font-size: 32px;
+}
+
+.blog-content h2 {
+  margin: 28px 0 12px;
+  font-size: 24px;
+}
+
+.blog-content h3 {
+  margin: 22px 0 10px;
+  font-size: 20px;
+}
+
+.blog-content p,
+.blog-content ul,
+.blog-content table,
+.blog-content pre {
+  margin: 16px 0;
+}
+
+.blog-content ul {
+  padding-left: 24px;
+  list-style: disc;
+}
+
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+}
+
+.blog-content th,
+.blog-content td {
+  border: 1px solid #e2e8f0;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.blog-content th {
+  background: #f8fafc;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.blog-content code {
+  border-radius: 4px;
+  background: #e2e8f0;
+  padding: 2px 5px;
+  color: #0f172a;
+  font-size: 0.92em;
+}
+
+.blog-content pre {
+  overflow: auto;
+  border-radius: 6px;
+  background: #0f172a;
+  padding: 16px;
+  color: #f8fafc;
+}
+
+.blog-content pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}

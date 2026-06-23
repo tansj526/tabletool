@@ -3,6 +3,7 @@ export const en = {
     navHome: "Home",
     navTool: "Tool",
     navAbout: "About",
+    navBlog: "Blog",
     brand: "TableTool",
     heroTitle: "Professional table data converter",
     heroText: "Convert CSV, TSV, JSON, and HTML tables locally in your browser.",

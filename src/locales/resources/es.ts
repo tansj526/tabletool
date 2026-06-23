@@ -3,6 +3,7 @@ export const es = {
     navHome: "Inicio",
     navTool: "Herramienta",
     navAbout: "Acerca",
+    navBlog: "Blog",
     brand: "TableTool",
     heroTitle: "Convertidor profesional de tablas",
     heroText: "Convierte CSV, TSV, JSON y tablas HTML localmente.",

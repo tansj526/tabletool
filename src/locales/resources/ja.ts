@@ -3,6 +3,7 @@ export const ja = {
     navHome: "ホーム",
     navTool: "ツール",
     navAbout: "概要",
+    navBlog: "ブログ",
     brand: "TableTool",
     heroTitle: "表データ変換ツール",
     heroText: "CSV、TSV、JSON、HTML テーブルをブラウザ内で変換します。",

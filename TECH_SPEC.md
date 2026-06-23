@@ -57,3 +57,11 @@ src/
 - 构建命令：`npm run build`
 - 输出目录：`out`
 - Cloudflare Pages 配置见 `wrangler.toml`。
+
+## 博客设计
+
+- Markdown 内容目录：`blog/{locale}/{slug}.md`
+- 构建时读取 frontmatter 和正文。
+- 生成博客列表页：`/blog`、`/{locale}/blog`
+- 生成博客详情页：`/blog/{slug}`、`/{locale}/blog/{slug}`
+- 每篇文章生成独立 SEO metadata。

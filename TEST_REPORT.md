@@ -17,6 +17,8 @@
 - 数据转置：通过，转置后 Markdown 输出正确更新。
 - 浏览器移动端验证：通过，390px 宽度下无横向溢出，输入区可见。
 - 浏览器控制台：无 error 日志。
+- 博客构建：通过，`/blog/test-post` 与 `/en/blog/test-post` 静态页面生成成功。
+- 博客 SEO：通过，测试文章 title、description、keywords 写入导出 HTML。
 
 ## 风险
 
