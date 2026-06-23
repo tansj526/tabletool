@@ -1,3 +1,5 @@
+"use client";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   ArrowDownUp,
@@ -17,7 +19,6 @@ import { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { z } from "zod";
-import { Seo } from "../../components/common/Seo";
 import { Button } from "../../components/ui/Button";
 import { SearchableSelect } from "../../components/ui/SearchableSelect";
 import { Textarea } from "../../components/ui/Textarea";
@@ -166,11 +167,6 @@ export function Index() {
 
   return (
     <>
-      <Seo
-        title={t("heroTitle")}
-        description={t("heroText")}
-        keywords="table converter,csv,json,excel,sql,markdown,yaml,html table converter"
-      />
       <section className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
           <div className="flex flex-col gap-4">

@@ -1,3 +1,5 @@
+"use client";
+
 import { Table2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { LanguageSwitcher } from "../common/LanguageSwitcher";
@@ -9,8 +11,8 @@ export function Header() {
     <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <a href="/" className="inline-flex items-center gap-2 font-bold text-slate-950">
-          <span className="grid h-9 w-9 place-items-center rounded-md bg-primary text-white">
-            <Table2 className="h-5 w-5" aria-hidden="true" />
+          <span className="grid h-9 w-9 place-items-center">
+            <img src="/logo.png" className="h-9 w-9" aria-hidden="true" />
           </span>
           <span>{t("brand")}</span>
         </a>

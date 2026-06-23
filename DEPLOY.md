@@ -22,9 +22,9 @@ npm run build
 
 Cloudflare Pages 设置：
 
-- Framework preset：Vite
+- Framework preset：Next.js / Static HTML export
 - Build command：`npm run build`
-- Build output directory：`dist`
+- Build output directory：`out`
 
 `wrangler.toml`：
 

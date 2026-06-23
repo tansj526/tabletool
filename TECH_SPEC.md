@@ -23,7 +23,7 @@ src/
 
 ## 技术方案
 
-- 使用 Vite 构建 React 19 应用。
+- 使用 Next.js App Router 构建 React 19 应用。
 - 使用 TypeScript strict 模式。
 - 使用 TailwindCSS 实现响应式页面。
 - 使用 Zustand 保存工具输入、输出和格式选择。
@@ -55,5 +55,5 @@ src/
 ## 部署设计
 
 - 构建命令：`npm run build`
-- 输出目录：`dist`
+- 输出目录：`out`
 - Cloudflare Pages 配置见 `wrangler.toml`。

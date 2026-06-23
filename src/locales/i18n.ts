@@ -7,14 +7,20 @@ import { fr } from "./resources/fr";
 import { ja } from "./resources/ja";
 import { pt } from "./resources/pt";
 import { zh } from "./resources/zh";
+import {
+  getLocaleFromPathname,
+  isSupportedLanguage,
+  SUPPORTED_LANGUAGES
+} from "./locales";
 
-const SUPPORTED_LANGUAGES = ["zh", "en", "fr", "es", "pt", "de", "ja"] as const;
-const storedLanguage = localStorage.getItem("tabletool-language") ?? "zh";
-const initialLanguage = SUPPORTED_LANGUAGES.some(
-  (language) => language === storedLanguage
-)
-  ? storedLanguage
-  : "zh";
+const pathLanguage =
+  typeof window === "undefined" ? null : getLocaleFromPathname(window.location.pathname);
+const storedLanguage =
+  typeof window === "undefined"
+    ? "zh"
+    : localStorage.getItem("tabletool-language") ?? "zh";
+const initialLanguage =
+  pathLanguage ?? (isSupportedLanguage(storedLanguage) ? storedLanguage : "zh");
 
 void i18n.use(initReactI18next).init({
   resources: { zh, en, fr, es, pt, de, ja },

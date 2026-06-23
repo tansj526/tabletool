@@ -1,6 +1,7 @@
+"use client";
+
 import { ShieldCheck, Timer, Wand2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { Seo } from "../../components/common/Seo";
 import { Index } from "../Tool";
 
 const BENEFITS = [
@@ -14,7 +15,7 @@ const FAQS = [
   ["faq2Q", "faq2A"],
   ["faq3Q", "faq3A"],
   ["faq4Q", "faq4A"],
-  ["faq5Q", "faq5A"]
+  // ["faq5Q", "faq5A"]
 ];
 
 export function Home() {
@@ -34,11 +35,6 @@ export function Home() {
 
   return (
     <>
-      <Seo
-        title="表格工具箱 - 专业的表格数据转换工具"
-        description={t("heroText")}
-        keywords="表格转换,CSV转JSON,JSON转CSV,HTML表格转换,在线表格工具"
-      />
       <Index />
       <section className="bg-white py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

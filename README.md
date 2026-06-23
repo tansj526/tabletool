@@ -6,7 +6,7 @@
 
 - React 19
 - TypeScript
-- Vite
+- Next.js
 - TailwindCSS
 - Zustand
 - React Hook Form
@@ -42,5 +42,5 @@ npm run build
 ## Cloudflare Pages 部署
 
 - 构建命令：`npm run build`
-- 输出目录：`dist`
+- 输出目录：`out`
 - 兼容日期：`2026-01-01`

@@ -1,16 +1,8 @@
-import { useTranslation } from "react-i18next";
-import { Seo } from "../../components/common/Seo";
+"use client";
 
 export function Index() {
-  const { t } = useTranslation();
-
   return (
     <>
-      <Seo
-        title={t("aboutTitle")}
-        description={t("aboutText")}
-        keywords="tabletool,table converter,about"
-      />
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="page-privacy rich-text">
           <h1 className="titles">Privacy Policy</h1>
