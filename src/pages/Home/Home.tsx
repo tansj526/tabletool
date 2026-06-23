@@ -1,7 +1,7 @@
 import { ShieldCheck, Timer, Wand2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Seo } from "../../components/common/Seo";
-import { Tool } from "../Tool/Tool";
+import { Index } from "../Tool";
 
 const BENEFITS = [
   { icon: Timer, title: "fastTitle", text: "fastText" },
@@ -39,7 +39,7 @@ export function Home() {
         description={t("heroText")}
         keywords="表格转换,CSV转JSON,JSON转CSV,HTML表格转换,在线表格工具"
       />
-      <Tool />
+      <Index />
       <section className="bg-white py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-slate-950">{t("whyTitle")}</h2>

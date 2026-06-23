@@ -1,21 +1,23 @@
 import { lazy, useMemo } from "react";
-import { About } from "../pages/About/About";
 import { AppLayout } from "../components/layout/AppLayout";
 
 const Home = lazy(() =>
   import("../pages/Home/Home").then((module) => ({ default: module.Home }))
 );
 const Tool = lazy(() =>
-  import("../pages/Tool/Tool").then((module) => ({ default: module.Tool }))
+  import("../pages/Tool").then((module) => ({ default: module.Index }))
+);
+const Privacy = lazy(() =>
+  import("../pages/Privacy").then((module) => ({ default: module.Index }))
 );
 
 export function AppRouter() {
   const route = useMemo(() => window.location.pathname, []);
 
-  if (route.startsWith("/about")) {
+  if (route.startsWith("/privacy")) {
     return (
       <AppLayout>
-        <About />
+        <Privacy />
       </AppLayout>
     );
   }

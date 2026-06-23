@@ -15,15 +15,15 @@ export function Header() {
           <span>{t("brand")}</span>
         </a>
         <nav className="flex items-center gap-1 text-sm font-medium text-slate-600">
-          <a className="rounded-md px-3 py-2 hover:bg-slate-100" href="/">
-            {t("navHome")}
-          </a>
-          <a className="rounded-md px-3 py-2 hover:bg-slate-100" href="/tool">
-            {t("navTool")}
-          </a>
-          <a className="rounded-md px-3 py-2 hover:bg-slate-100" href="/about">
-            {t("navAbout")}
-          </a>
+          {/*<a className="rounded-md px-3 py-2 hover:bg-slate-100" href="/">*/}
+          {/*  {t("navHome")}*/}
+          {/*</a>*/}
+          {/*<a className="rounded-md px-3 py-2 hover:bg-slate-100" href="/tool">*/}
+          {/*  {t("navTool")}*/}
+          {/*</a>*/}
+          {/*<a className="rounded-md px-3 py-2 hover:bg-slate-100" href="/about">*/}
+          {/*  {t("navAbout")}*/}
+          {/*</a>*/}
         </nav>
         <LanguageSwitcher />
       </div>

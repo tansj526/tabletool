@@ -52,7 +52,7 @@ type EditingCell = {
   columnIndex: number;
 } | null;
 
-export function Tool() {
+export function Index() {
   const { t, i18n } = useTranslation();
   const { copied, copy } = useCopy();
   const store = useToolStore();
