@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getBlogSlugs } from "../lib/blog";
+import { DEFAULT_LANGUAGE } from "../locales/locales";
 import { SUPPORTED_LOCALES, type SeoLocale } from "../seo";
 
 const SITE_URL = "https://tabletool.cn";
@@ -11,7 +12,7 @@ function absoluteUrl(path: string) {
 }
 
 function localePath(locale: SeoLocale, path = "") {
-  if (locale === "zh") {
+  if (locale === DEFAULT_LANGUAGE) {
     return path || "/";
   }
 
@@ -23,22 +24,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPaths = ["", "/tool", "/privacy", "/blog"];
   const sitemapEntries: MetadataRoute.Sitemap = [];
 
-  for (const path of staticPaths) {
-    sitemapEntries.push({
-      url: absoluteUrl(path || "/"),
-      lastModified: now,
-      changeFrequency: path === "" ? "weekly" : "monthly",
-      priority: path === "" ? 1 : 0.8
-    });
-  }
-
   for (const locale of SUPPORTED_LOCALES) {
     for (const path of staticPaths) {
       sitemapEntries.push({
         url: absoluteUrl(localePath(locale, path)),
         lastModified: now,
         changeFrequency: path === "" ? "weekly" : "monthly",
-        priority: locale === "zh" && path === "" ? 1 : 0.7
+        priority: locale === DEFAULT_LANGUAGE && path === "" ? 1 : 0.7
       });
     }
 

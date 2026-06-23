@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { DEFAULT_LANGUAGE } from "./locales/locales";
 
 export const SUPPORTED_LOCALES = ["zh", "en", "fr", "es", "pt", "de", "ja"] as const;
 
@@ -72,8 +73,8 @@ const SEO_BY_LOCALE: Record<
 };
 
 const LANGUAGE_ALTERNATES: Record<string, string> = {
+  en: "/",
   "zh-CN": "/zh",
-  en: "/en",
   fr: "/fr",
   es: "/es",
   pt: "/pt",
@@ -91,7 +92,7 @@ export function getSeo(locale: SeoLocale) {
 
 export function getMetadata(locale: SeoLocale, path = ""): Metadata {
   const seo = getSeo(locale);
-  const canonical = locale === "zh" ? path || "/" : `/${locale}${path}`;
+  const canonical = locale === DEFAULT_LANGUAGE ? path || "/" : `/${locale}${path}`;
 
   return {
     metadataBase: new URL("https://tabletool.cn"),

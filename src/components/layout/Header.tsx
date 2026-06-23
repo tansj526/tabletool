@@ -2,14 +2,15 @@
 
 import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
-import { getLocaleFromPathname } from "../../locales/locales";
+import { DEFAULT_LANGUAGE, getLocaleFromPathname } from "../../locales/locales";
 import { LanguageSwitcher } from "../common/LanguageSwitcher";
 
 export function Header() {
   const { t } = useTranslation();
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname);
-  const localePrefix = locale && locale !== "zh" ? `/${locale}` : "";
+  const activeLocale = locale ?? DEFAULT_LANGUAGE;
+  const localePrefix = activeLocale === DEFAULT_LANGUAGE ? "" : `/${activeLocale}`;
 
   return (
     <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur">

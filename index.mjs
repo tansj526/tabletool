@@ -115,7 +115,7 @@ export default {
           'es',
           'pt',
           'de',
-          'jp',
+          'ja',
         ]
         // 定义一个不需要重定向的路径白名单
         const noRedirectPaths = [

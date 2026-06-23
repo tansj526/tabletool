@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { DEFAULT_LANGUAGE } from "../../../locales/locales";
 import { BlogList } from "../../../views/Blog/BlogList";
 import { isSeoLocale, SUPPORTED_LOCALES, type SeoLocale } from "../../../seo";
 
@@ -31,7 +32,7 @@ export async function generateMetadata({
         ? "表格工具箱博客, 表格转换教程, 数据清洗, Markdown博客"
         : "TableTool blog, table conversion tutorial, data cleaning, Markdown blog",
     alternates: {
-      canonical: locale === "zh" ? "/blog" : `/${locale}/blog`
+      canonical: locale === DEFAULT_LANGUAGE ? "/blog" : `/${locale}/blog`
     }
   };
 }

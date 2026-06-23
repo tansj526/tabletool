@@ -4,6 +4,7 @@ import { Languages } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import {
+  DEFAULT_LANGUAGE,
   getLocaleFromPathname,
   getLocalizedPath,
   type SupportedLanguage
@@ -23,7 +24,7 @@ export function LanguageSwitcher() {
   const { i18n } = useTranslation();
   const pathname = usePathname();
   const router = useRouter();
-  const activeLanguage = getLocaleFromPathname(pathname) ?? i18n.language;
+  const activeLanguage = getLocaleFromPathname(pathname) ?? DEFAULT_LANGUAGE;
 
   return (
     <label className="inline-flex h-10 items-center gap-2 rounded-md border border-slate-200 bg-white px-3 text-sm text-slate-700">

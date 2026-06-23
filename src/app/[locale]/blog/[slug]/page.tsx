@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllBlogStaticParams, getBlogPost } from "../../../../lib/blog";
+import { DEFAULT_LANGUAGE } from "../../../../locales/locales";
 import { isSeoLocale, type SeoLocale } from "../../../../seo";
 import { BlogPost } from "../../../../views/Blog/BlogPost";
 
@@ -32,7 +33,8 @@ export async function generateMetadata({
     description: post.description,
     keywords: post.keywords,
     alternates: {
-      canonical: locale === "zh" ? `/blog/${post.slug}` : `/${locale}/blog/${post.slug}`
+      canonical:
+        locale === DEFAULT_LANGUAGE ? `/blog/${post.slug}` : `/${locale}/blog/${post.slug}`
     },
     openGraph: {
       title: post.title,
