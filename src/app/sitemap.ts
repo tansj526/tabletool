@@ -3,7 +3,7 @@ import { getBlogSlugs } from "../lib/blog";
 import { DEFAULT_LANGUAGE } from "../locales/locales";
 import { SUPPORTED_LOCALES, type SeoLocale } from "../seo";
 
-const SITE_URL = "https://tabletool.cn";
+const SITE_URL = "https://tab.keepmot.com";
 
 export const dynamic = "force-static";
 
