@@ -15,7 +15,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-        <a href="/" className="inline-flex items-center gap-2 font-bold text-slate-950">
+        <a href={`${localePrefix}/`} className="inline-flex items-center gap-2 font-bold text-slate-950">
           <span className="grid h-9 w-9 place-items-center">
             <img src="/logo.png" className="h-9 w-9" aria-hidden="true" />
           </span>
