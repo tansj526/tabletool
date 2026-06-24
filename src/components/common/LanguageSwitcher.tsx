@@ -7,6 +7,8 @@ import {
   DEFAULT_LANGUAGE,
   getLocaleFromPathname,
   getLocalizedPath,
+  isSupportedLanguage,
+  LANGUAGE_STORAGE_KEY,
   type SupportedLanguage
 } from "../../locales/locales";
 
@@ -24,7 +26,10 @@ export function LanguageSwitcher() {
   const { i18n } = useTranslation();
   const pathname = usePathname();
   const router = useRouter();
-  const activeLanguage = getLocaleFromPathname(pathname) ?? DEFAULT_LANGUAGE;
+  const currentLanguage = i18n.language.split("-")[0] ?? DEFAULT_LANGUAGE;
+  const activeLanguage =
+    getLocaleFromPathname(pathname) ??
+    (isSupportedLanguage(currentLanguage) ? currentLanguage : DEFAULT_LANGUAGE);
 
   return (
     <label className="inline-flex h-10 items-center gap-2 rounded-md border border-slate-200 bg-white px-3 text-sm text-slate-700">
@@ -35,7 +40,7 @@ export function LanguageSwitcher() {
         aria-label="Language"
         onChange={(event) => {
           const language = event.target.value as SupportedLanguage;
-          localStorage.setItem("tabletool-language", language);
+          localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
           void i18n.changeLanguage(language);
           router.push(getLocalizedPath(pathname, language));
         }}

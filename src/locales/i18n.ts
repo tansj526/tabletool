@@ -9,13 +9,17 @@ import { pt } from "./resources/pt";
 import { zh } from "./resources/zh";
 import {
   DEFAULT_LANGUAGE,
+  getBrowserLanguage,
   getLocaleFromPathname,
+  getStoredLanguage,
   SUPPORTED_LANGUAGES
 } from "./locales";
 
 const pathLanguage =
   typeof window === "undefined" ? null : getLocaleFromPathname(window.location.pathname);
-const initialLanguage = pathLanguage ?? DEFAULT_LANGUAGE;
+const browserLanguage =
+  typeof window === "undefined" ? DEFAULT_LANGUAGE : getBrowserLanguage(window.navigator.language);
+const initialLanguage = pathLanguage ?? getStoredLanguage() ?? browserLanguage;
 
 void i18n.use(initReactI18next).init({
   resources: { zh, en, fr, es, pt, de, ja },
