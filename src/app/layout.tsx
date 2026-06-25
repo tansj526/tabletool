@@ -17,6 +17,31 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <ClientProviders>
           <AppLayout>{children}</AppLayout>
         </ClientProviders>
+        <script
+            dangerouslySetInnerHTML={{
+                __html:  `
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.async=true;
+              hm.src = "https://hm.baidu.com/hm.js?6a5c3dc0642059046375c36a9742b839";
+              var s = document.getElementsByTagName("script")[0];
+              s.parentNode.insertBefore(hm, s);
+            })();
+            `,
+            }}
+        />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-W98F59QD"></script>
+        <script
+            dangerouslySetInnerHTML={{
+                __html:  `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'GTM-W98F59QD');
+            `,
+            }}
+        />
       </body>
     </html>
   );
